@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Our Love Story ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+    <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
 
     <style>
         body {
@@ -18,18 +18,18 @@
         }
 
         #book {
-            width: 700px;
+            width: 350px;
             height: 500px;
         }
 
-        #book .page {
+        .page {
             background: white;
             padding: 20px;
             text-align: center;
         }
 
         img {
-            width: 80%;
+            width: 100%;
             border-radius: 15px;
             margin-bottom: 10px;
         }
@@ -43,7 +43,6 @@
 <body>
 
 <div id="book">
-
     <div class="page">
         <h1>Our Love Story ❤️</h1>
         <p>Made with love by Akshat</p>
@@ -71,15 +70,21 @@
         <h1>Forever With You 💖</h1>
         <p>You are my always.</p>
     </div>
-
 </div>
 
 <script>
-    $("#book").turn({
-        width: 700,
-        height: 500,
-        autoCenter: true
-    });
+    const pageFlip = new St.PageFlip(
+        document.getElementById("book"),
+        {
+            width: 350,
+            height: 500,
+            size: "fixed",
+            showCover: true,
+            mobileScrollSupport: false
+        }
+    );
+
+    pageFlip.loadFromHTML(document.querySelectorAll(".page"));
 </script>
 
 </body>
