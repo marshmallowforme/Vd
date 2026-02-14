@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-x: auto;
+}
+
+.book {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.page {
+  background: white;
+  width: 300px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+h1, h2 {
+  color: #ff4d6d;
+}
