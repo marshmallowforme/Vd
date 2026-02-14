@@ -15,46 +15,68 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
             font-family: Georgia, serif;
         }
 
-        #book {
-            width: 90vw;
-            height: 90vh;
+        .book-wrapper {
+            width: 900px;
+            height: 650px;
         }
 
+        #book {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Normal Pages (Printed Paper Feel) */
         .page {
-            background: white;
+            background: #fffaf0; /* soft paper color */
             padding: 40px;
+            box-sizing: border-box;
             text-align: center;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        /* Covers */
+        .cover {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: white;
+            font-weight: bold;
+        }
+
+        h1, h2 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         img {
-            width: 80%;
+            width: 75%;
             max-height: 60%;
             object-fit: cover;
             border-radius: 15px;
             margin-bottom: 20px;
         }
 
-        h1, h2 {
-            color: #ff4d6d;
-        }
-
-        p {
-            font-size: 18px;
+        /* Poem Image Page */
+        .poem-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
 
+<div class="book-wrapper">
 <div id="book">
 
     <!-- Front Cover -->
-    <div class="page">
+    <div class="page cover">
         <h1>Our Love Story ❤️</h1>
         <p>Made with love by Akshat</p>
     </div>
@@ -80,29 +102,29 @@
         <p>That tiny dimple steals my heart again and again.</p>
     </div>
 
-    <!-- Ending Page -->
+    <!-- Poem Image Page -->
     <div class="page">
+        <img src="images/poem.jpg" class="poem-image">
+    </div>
+
+    <!-- Back Cover -->
+    <div class="page cover">
         <h1>Forever With You 💖</h1>
-        <p>You are my always.</p>
+        <p>The End… or just the beginning?</p>
     </div>
 
-    <!-- Back Cover (Important for proper flipping) -->
-    <div class="page">
-        <h1>The End ❤️</h1>
-        <p>But our story is just beginning...</p>
-    </div>
-
+</div>
 </div>
 
 <script>
     const pageFlip = new St.PageFlip(
         document.getElementById("book"),
         {
-            width: 500,
+            width: 900,
             height: 650,
-            size: "stretch",
+            size: "fixed",              // prevents cover misalignment
             showCover: true,
-            usePortrait: true,
+            usePortrait: false,
             mobileScrollSupport: false
         }
     );
