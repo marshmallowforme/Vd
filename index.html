@@ -1,47 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Our Love Story ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Our Love Story ❤️</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Georgia, serif;
+        }
+
+        #book {
+            width: 700px;
+            height: 500px;
+        }
+
+        #book .page {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 80%;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+
+        h1, h2 {
+            color: #ff4d6d;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="book">
+<div id="book">
 
-  <!-- Page 1 -->
-  <div class="page">
-    <h1>Our Love Story ❤️</h1>
-    <p>Made with love by Ankit</p>
-  </div>
+    <div class="page">
+        <h1>Our Love Story ❤️</h1>
+        <p>Made with love by Akshat</p>
+    </div>
 
-  <!-- Page 2 -->
-  <div class="page">
-    <img src="images/smile.jpg">
-    <h2>Her Beautiful Smile</h2>
-    <p>Your smile makes my worst days feel magical.</p>
-  </div>
+    <div class="page">
+        <img src="images/smile.jpg">
+        <h2>Her Beautiful Smile</h2>
+        <p>Your smile makes my worst days magical.</p>
+    </div>
 
-  <!-- Page 3 -->
-  <div class="page">
-    <img src="images/eyes.jpg">
-    <h2>Those Lovely Eyes</h2>
-    <p>I get lost in your eyes every single time.</p>
-  </div>
+    <div class="page">
+        <img src="images/eyes.jpg">
+        <h2>Those Lovely Eyes</h2>
+        <p>I get lost in your eyes every single time.</p>
+    </div>
 
-  <!-- Page 4 -->
-  <div class="page">
-    <img src="images/dimple.jpg">
-    <h2>The Cutest Dimple</h2>
-    <p>That tiny dimple steals my heart again and again.</p>
-  </div>
+    <div class="page">
+        <img src="images/dimple.jpg">
+        <h2>The Cutest Dimple</h2>
+        <p>That tiny dimple steals my heart again and again.</p>
+    </div>
 
-  <!-- Page 5 -->
-  <div class="page">
-    <h1>Forever With You 💖</h1>
-    <p>You are my always.</p>
-  </div>
+    <div class="page">
+        <h1>Forever With You 💖</h1>
+        <p>You are my always.</p>
+    </div>
 
 </div>
+
+<script>
+    $("#book").turn({
+        width: 700,
+        height: 500,
+        autoCenter: true
+    });
+</script>
 
 </body>
 </html>
