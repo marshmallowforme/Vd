@@ -4,52 +4,39 @@
     <title>Our Love Story ❤️</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- PageFlip Library -->
     <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
 
     <style>
-        body {
+        html, body {
             margin: 0;
+            height: 100%;
+        }
+
+        body {
             background: linear-gradient(to right, #ffdde1, #ee9ca7);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            overflow: hidden;
             font-family: Georgia, serif;
         }
 
-        .book-wrapper {
+        #book {
             width: 900px;
             height: 650px;
         }
 
-        #book {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Normal Pages (Printed Paper Feel) */
         .page {
-            background: #fffaf0; /* soft paper color */
+            background: #fffaf0;
             padding: 40px;
             box-sizing: border-box;
             text-align: center;
         }
 
-        /* Covers */
         .cover {
             background: linear-gradient(135deg, #ff4d6d, #ff758f);
             color: white;
             font-weight: bold;
-        }
-
-        h1, h2 {
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
         }
 
         img {
@@ -60,49 +47,80 @@
             margin-bottom: 20px;
         }
 
-        /* Poem Image Page */
         .poem-image {
             width: 100%;
             height: 100%;
             object-fit: contain;
             border-radius: 10px;
         }
+
+        h1, h2 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
     </style>
 </head>
 
 <body>
 
-<div class="book-wrapper">
 <div id="book">
 
-    <!-- Front Cover -->
     <div class="page cover">
-        <h1>Our Love Story ❤️</h1>
+        <h1>Neeti The Diva ❤️</h1>
         <p>Made with love by Akshat</p>
     </div>
 
-    <!-- Smile Page -->
     <div class="page">
         <img src="images/smile.jpg">
         <h2>Her Beautiful Smile</h2>
         <p>Your smile makes my worst days magical.</p>
     </div>
 
-    <!-- Eyes Page -->
     <div class="page">
         <img src="images/eyes.jpg">
         <h2>Those Lovely Eyes</h2>
         <p>I get lost in your eyes every single time.</p>
     </div>
 
-    <!-- Dimple Page -->
     <div class="page">
         <img src="images/dimple.jpg">
         <h2>The Cutest Dimple</h2>
         <p>That tiny dimple steals my heart again and again.</p>
     </div>
 
-    <!-- Poem Image Page -->
+    <div class="page">
+        <img src="images/poem.jpg" class="poem-image">
+    </div>
+
+    <div class="page cover">
+        <h1>Always With You 💖</h1>
+        <p>LOVE YOU ❤️</p>
+    </div>
+
+</div>
+
+<script>
+    const pageFlip = new St.PageFlip(
+        document.getElementById("book"),
+        {
+            width: 900,
+            height: 650,
+            size: "fixed",
+            showCover: true,
+            usePortrait: false,
+            mobileScrollSupport: false
+        }
+    );
+
+    pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+</script>
+
+</body>
+</html>
     <div class="page">
         <img src="images/poem.jpg" class="poem-image">
     </div>
